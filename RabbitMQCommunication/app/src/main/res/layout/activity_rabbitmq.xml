@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
    tools:context=".activities.RabbitMQActivity">
     <EditText
-        android:id="@+id/editTextWrite"
+        android:id="@+id/editTextMessage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="@string/editTextHint"
