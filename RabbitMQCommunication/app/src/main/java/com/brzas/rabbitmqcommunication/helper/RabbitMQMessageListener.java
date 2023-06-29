@@ -1,2 +1,5 @@
-package com.brzas.rabbitmqcommunication.helper;public interface RabbitMQMessageListener {
+package com.brzas.rabbitmqcommunication.helper;
+
+public interface RabbitMQMessageListener {
+    void onMessageReceived(String message);
 }
