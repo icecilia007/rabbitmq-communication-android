@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   tools:context=".activities.RabbitMQActivity">
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="@string/editTextHint"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical_09"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical_01"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal_01"
+        app:layout_constraintBottom_toBottomOf="@id/editTextWriteBottom_03"
+        >
+    </EditText>
+    <EditText
+        android:id="@+id/editTextReceive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/editTextReceiveHint"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical_09"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical_01"
+        app:layout_constraintBottom_toBottomOf="@id/btnSendTopBarrier"
+        >
+    </EditText>
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnText"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal_09"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical_09"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVertical_01">
+    </Button>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/editTextWriteBottom_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical_09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal_09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/btnSendTopBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="send"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

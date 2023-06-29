@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RabbitMQCommunication</string>
+    <string name="rabbitmqactivity_name">Communication</string>
+    <string name="editTextHint">write something</string>
+    <string name="btnText">Send</string>
+    <string name="editTextReceiveHint">Receive Message</string>
+</resources>
