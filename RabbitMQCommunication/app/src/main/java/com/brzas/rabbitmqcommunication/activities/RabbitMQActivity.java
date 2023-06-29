@@ -88,8 +88,7 @@ public class RabbitMQActivity extends AppCompatActivity implements ServiceConnec
 
     @Override
     public void onMessageReceived(String message) {
-        // Faça algo com a mensagem recebida
-        Log.d(TAG, "Mensagem recebida: " + message);
+        Log.d(TAG, "Message receive: " + message);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
