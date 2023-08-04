@@ -2,4 +2,26 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Cor principal -->
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#FFC107</color>
+
+    <!-- Cores secundárias -->
+    <color name="colorSecondary">#FFA726</color>
+    <color name="colorSecondaryDark">#E65100</color>
+    <color name="colorSecondaryLight">#FFD95C</color>
+
+    <!-- Cor principal -->
+    <color name="colorPrimaryDarkTheme">#FF5722</color>
+    <color name="colorPrimaryDarkDarkTheme">#BF360C</color>
+    <color name="colorAccentDarkTheme">#FF8A65</color>
+
+    <!-- Cores secundárias -->
+    <color name="colorSecondaryDarkTheme">#FF6D00</color>
+    <color name="colorSecondaryDarkDarkTheme">#E64A19</color>
+    <color name="colorSecondaryLightDarkTheme">#FFAB40</color>
+
+    <color name="pastel_background">#88E5E3EC</color>
+
 </resources>

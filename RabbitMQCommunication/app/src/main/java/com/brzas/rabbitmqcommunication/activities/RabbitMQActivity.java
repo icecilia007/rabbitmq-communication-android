@@ -13,28 +13,43 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.brzas.rabbitmqcommunication.R;
+import com.brzas.rabbitmqcommunication.adapter.MessageRecyclerViewAdapter;
 import com.brzas.rabbitmqcommunication.helper.RabbitMQMessageListener;
+import com.brzas.rabbitmqcommunication.models.Message;
 import com.brzas.rabbitmqcommunication.service.RabbitMQService;
 
 import org.w3c.dom.Text;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RabbitMQActivity extends AppCompatActivity implements ServiceConnection , RabbitMQMessageListener {
 
     private static final String TAG = "RabbitMQActivity";
     private RabbitMQService rabbitMQService;
     private boolean isServiceBound = false;
-    private EditText editReceiveTxt;
     private EditText editMessageTxt;
     private String messageSent;
-
+    private RecyclerView recyclerView;
+    private MessageRecyclerViewAdapter messageRecyclerViewAdapter;
+    private List<Message> messageList = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rabbitmq);
-        editReceiveTxt = findViewById(R.id.editTextReceive);
         editMessageTxt= findViewById(R.id.editTextMessage);
+
+        recyclerView = findViewById(R.id.recyclerMessage);
+        messageRecyclerViewAdapter = new MessageRecyclerViewAdapter(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(messageRecyclerViewAdapter);
+
+
         findViewById(R.id.send).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +59,6 @@ public class RabbitMQActivity extends AppCompatActivity implements ServiceConnec
                     try{
                         rabbitMQService.sendToQueue(messageSent);
                     }catch (Exception e){
-                        editReceiveTxt.setText(e.getMessage());
                     }
                 }
             }
@@ -55,7 +69,7 @@ public class RabbitMQActivity extends AppCompatActivity implements ServiceConnec
     protected void onStart() {
         super.onStart();
         Intent serviceIntent = new Intent(this, RabbitMQService.class);
-        startService(serviceIntent); // Strat RabbitMQ service
+        startService(serviceIntent); // Start RabbitMQ service
         bindService(serviceIntent, this, Context.BIND_AUTO_CREATE);
     }
 
@@ -92,7 +106,9 @@ public class RabbitMQActivity extends AppCompatActivity implements ServiceConnec
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                 editReceiveTxt.setText(message);
+                Message messageObj = new Message(message, LocalDateTime.now());
+                messageList.add(messageObj);
+                messageRecyclerViewAdapter.addMessage(messageObj);
             }
         });
     }

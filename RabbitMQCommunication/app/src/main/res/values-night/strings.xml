@@ -3,4 +3,6 @@
     <string name="rabbitmqactivity_name">Communication</string>
     <string name="btnText">Send</string>
     <string name="editTextReceiveHint">Receive Message</string>
+    <string name="msg">Testing the quenue</string>
+    <string name="tmst">17:45</string>
 </resources>

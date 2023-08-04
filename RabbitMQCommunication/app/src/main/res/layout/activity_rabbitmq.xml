@@ -16,16 +16,6 @@
         app:layout_constraintBottom_toBottomOf="@id/editTextWriteBottom_03"
         >
     </EditText>
-    <EditText
-        android:id="@+id/editTextReceive"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/editTextReceiveHint"
-        app:layout_constraintEnd_toEndOf="@id/guidelineVertical_09"
-        app:layout_constraintStart_toStartOf="@id/guidelineVertical_01"
-        app:layout_constraintBottom_toBottomOf="@id/btnSendTopBarrier"
-        >
-    </EditText>
     <Button
         android:id="@+id/send"
         android:layout_width="wrap_content"
@@ -35,7 +25,16 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical_09"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical_01">
     </Button>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMessage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical_09"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVertical_01"
+        app:layout_constraintTop_toBottomOf="@id/editTextWriteBottom_03"
+        app:layout_constraintBottom_toTopOf="@id/btnSendTopBarrier"
+        tools:listitem="@layout/message_content">
+    </androidx.recyclerview.widget.RecyclerView>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/editTextWriteBottom_03"
         android:layout_width="wrap_content"
