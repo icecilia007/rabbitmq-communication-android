@@ -1,7 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.RabbitMQCommunication" parent="Theme.Material3.DayNight.NoActionBar">
+
+    <!-- Base application theme for night mode. -->
+    <style name="Base.Theme.RabbitMQCommunication" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="windowActionBar">false</item>
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Cor primária -->
+        <item name="colorPrimary">@color/colorPrimaryDarkTheme</item>
+
+        <!-- Cor escura primária -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDarkTheme</item>
+
+        <!-- Cor de destaque -->
+        <item name="colorAccent">@color/colorAccentDarkTheme</item>
+
+        <item name="android:color">?attr/colorPrimaryDark</item>
+        <item name="android:tint">?attr/colorAccent</item>
+        <item name="android:textColor">?attr/colorSecondaryVariant</item>
+        <item name="fontFamily">@font/poppins</item>
+
     </style>
+    <style name="Theme.Basic_CRUD_SQLite" parent="Base.Theme.RabbitMQCommunication" />
+
+    <style name="CustomDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">false</item>
+    </style>
+    <style name="TextAppearance.LightTheme" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

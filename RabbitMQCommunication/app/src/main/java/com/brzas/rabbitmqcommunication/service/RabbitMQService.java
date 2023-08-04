@@ -24,10 +24,10 @@ public class RabbitMQService extends Service {
      */
     private static final String QUEUE_NAME = "test_rabbitmq";
     //your ip address
-    private static final String HOST_NAME = "your_address";
+    private static final String HOST_NAME = "";
     private static final int PORT = 5672;
-    private static final String USERNAME = "username";
-    private static final String PASSWORD = "passwaord";
+    private static final String USERNAME = "izabela";
+    private static final String PASSWORD = "guest";
     private static final String VIRTUAL_HOST = "/";
 
     private ConnectionFactory factory;
@@ -128,7 +128,7 @@ public class RabbitMQService extends Service {
         executorService.execute(() -> {
             try {
                 channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
-                Log.d("RabbitMQService", " message sent to quenue" + message);
+                Log.d("RabbitMQService", " message sent to quenue: " + message);
             } catch (IOException e) {
                 e.printStackTrace();
             }
