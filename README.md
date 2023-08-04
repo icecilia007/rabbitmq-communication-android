@@ -43,6 +43,13 @@ at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:11
 at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1128)
 at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1290)
 `
+* Please note that in this project, I utilize the 'font' feature introduced in Android 8.0 (API level 26), which allows the use of fonts as resources using XML. However, this feature is only supported on devices with this specification. If you encounter any issues while running the project and want to avoid this problem, you can remove the following line from the code:
+
+`theme.xml
+<item name="fontFamily">@font/poppins</item>`
+
+[Android Studio Documentation](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml?hl=pt-br)
+    
 
 ##### If you encounter something similar, it may be that the port is incorrect, so try changing it to 5672.
 
